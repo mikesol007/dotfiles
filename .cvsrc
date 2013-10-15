@@ -1,3 +1,4 @@
-cvs -q
+cvs -z3 -q
+diff -u -N
 update -Pd
-
+remove -f
