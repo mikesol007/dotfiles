@@ -1,0 +1,4 @@
+0 5-13/1 * * SUN-FRI (cd /home/msoliman/jobs/dartImport;./run.sh)
+0 5,6,16 * * SAT (cd /home/msoliman/jobs/dartImport;./run.sh)
+
+0 8 * * * (cd /home/msoliman/jobs/tuplusImport;./tuplus_cron.sh)

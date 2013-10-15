@@ -1,0 +1,53 @@
+# .tcshrc
+umask 022
+
+setenv LS_COLORS di=36
+
+# Oracle
+setenv ORACLE_BASE /opt/ora11g/orabase
+setenv ORACLE_HOME $ORACLE_BASE/db
+setenv ORA_CRS_HOME /opt/ora11g/crs
+setenv PATH $ORACLE_HOME/bin:$PATH
+setenv CVSROOT ":pserver:msoliman@eng.cvs:2401/usr/local/cvs/eng"
+setenv DEV_HOME $HOME/devel/java
+
+setenv LD_LIBRARY_PATH $ORACLE_HOME/lib
+
+setenv CLASSPATH $ORACLE_HOME/JRE:$ORACLE_HOME/jlib:$ORACLE_HOME/rdbms:$ORACLE_HOME/network/jlib:$DEV_HOME/:$DEV_HOME/3rdparty/ojdbc6.jar:$DEV_HOME/3rdparty/mail.jar
+
+setenv THREADS_FLAGS native
+setenv TEMP /tmp
+setenv TMPDIR /tmp
+
+setenv ORACLE_SID rnd_MISC
+
+set prompt="%{\033[36m%}%! %P [%n@%m:%~]%{\033[0m%} %B>%b "
+
+# Ctrl-D won't log you out
+set ignoreeof=3
+
+# Tab completion file listing
+set autolist=ambiguous
+
+set history=2500
+set savehist=(2500 merge)
+set histlit
+
+# Directory history
+alias dirs 'dirs -vl'
+set dunique
+set pushdsilent
+set pushdtohome
+alias cd 'pushd \!*'
+
+# Key bindings
+bindkey -b ^r i-search-back
+bindkey -b M-. insert-last-word
+
+complete cvs p/1/"(add admin annotate checkout commit diff edit \
+                   editors export history import init log login \
+                   rdiff release remove rtag status tag unedit \
+                   update watch)"/
+
+source ~/.alias
+
