@@ -1,0 +1,72 @@
+
+#SHELL ALIASES
+alias ssh 'ssh -P'
+alias ossh 'ssh -P -l oracle db02'
+alias ls ls --color=tty
+alias ll ls -lah --color=tty
+alias llh "ls -clth | head"
+alias ps ps aux --cols 3000 -H
+if -x /usr/bin/vim alias vi "vim"
+alias du du --max-depth=1 -h
+alias df df -h
+alias ora 'ssh -l oracle `hostname`'
+alias reportrpt 'cd /home/msoliman/devel/db/app/report_rpt/'
+alias sptfr 'cd /home/msoliman/devel/db/app/report_rpt/init/objects'
+alias rptcncr 'cd /home/msoliman/devel/db/app/rptcncr/'
+alias etl 'cd /home/msoliman/devel/db/app/rptcncr/init/objects/package'
+alias design 'cd /home/msoliman/devel/db/design/app/rptcncr'
+alias tlarpt 'cd /home/msoliman/devel/db/app/tla_rpt/'
+alias wsa 'cd /home/msoliman/devel/db/app/wsa/'
+alias release 'cd /home/release/db/app/'
+alias hd 'cd /home/msoliman/CVS/eng/HEAD/db/app/'
+
+# DEVEL ALIASES
+alias runtest javarun -w ~/devel/java 
+alias jcomp javac -deprecation -sourcepath ~/devel/java -extdirs ~/devel/java/3rdparty -Xlint:unchecked
+alias unittest "/home/public/vma/bin/unittest"
+
+# CVS ALIASES
+alias locks 'cvs editors | cut -f1-3 | expand -55,80'
+alias cvspublish cvs tag -F PUBLISH
+alias insidecvs cvs -d :pserver:msoliman@inside.cvs:/usr/local/cvs/inside
+alias projmancvs cvs -d :pserver:msoliman@projman.cvs:/usr/local/cvs/projman
+alias itcvs cvs -d :pserver:msoliman@it.cvs:/usr/local/cvs/it
+alias devcvs cvs -d :pserver:msoliman@dev.cvs:/usr/local/cvs/dev
+alias engcvs cvs -d :pserver:msoliman@eng.cvs:/usr/local/cvs/eng
+alias rndcvs cvs -d :pserver:msoliman@rnd.cvs:/usr/local/cvs/rnd
+alias tmpcvs cvs -d :pserver:msoliman@tmp.cvs:/usr/local/cvs/tmp
+alias prodcvs cvs -d :pserver:msoliman@prod-tools.cvs:/usr/local/cvs/prod-tools
+alias branchList "cvs -q log -h | grep '_BRANCH:' | cut -f1 -d':' | sort | uniq"
+alias cvsup "cvs -q up"
+
+alias getLatest "cleanResins; /home/public/vma/bin/clearall; cd ~/dev; devcvs -q up -A java tools vma config db; /home/public/vma/bin/compall;"
+alias newver "cleanResins; /home/public/vma/bin/clearall; /home/msoliman/bin/compCommands/updatever; /home/public/vma/bin/compall;"
+alias vma0stop "/opt/vma/resin013-aaa/bin/resinctl stop"
+alias vma0start "setenv ORACLE_HOME /opt/ora920; setenv PATH ${PATH}:${ORACLE_HOME}/bin:${ORACLE_HOME}/ctx/lib; setenv LD_LIBRARY_PATH ${ORACLE_HOME}/lib:${ORACLE_HOME}/ctx/lib; setenv ORA_NLS32 ${ORACLE_HOME}/ocommon/nls/admin/data;vma0stop; rm- rf /opt/vma/resin013-aaa/work /opt/vma/resin013-aaa/cache; /opt/vma/resin013-aaa/bin/resinctl start; tail -fn50 /opt/vma/resin013-aaa/log/vma.log"
+alias vma1stop "/opt/vma/resin113-aaa/bin/resinctl stop"
+alias vma1start "vma1stop; rm -rf /opt/vma/resin113-aaa/work /opt/vma/resin113-aaa/cache; /opt/vma/resin113-aaa/bin/resinctl start; tail -fn50 /opt/vma/resin113-aaa/log/vma.log"
+alias vma2stop "/opt/vma/resin213-aaa/bin/resinctl stop"
+alias vma2start "vma2stop;  rm -rf /opt/vma/resin213-aaa/work /opt/vma/resin213-aaa/cache; /opt/vma/resin213-aaa/bin/resinctl start; tail -fn50 /opt/vma/resin213-aaa/log/vma.log"
+
+# Testing
+alias age '~/dev/tools/internal/cncr/agingMachine/agingMachine.pl -c ~/dev/tools/internal/cncr/agingMachine/agingMachine.xml'
+alias killWebFlowService kill `ps --cols=4000 | grep WebFlowService | cut -d ' ' -f 4`
+alias startWebFlowService '/home/msoliman/dev/build/bin/webFlow/common/startWebFlowService.sh 8081'
+alias runTests "/home/msoliman/dev/build/bin/webFlow/cncr/runTests.pl"
+#alias befree "java -cp /home/msoliman/workingJunk/befree/classes:$CLASSPATH com.truelink.app.tool.beFree.BeFreeDataFTP /home/msoliman/workingJunk/befree/classes/com/truelink/app/tool/beFree/BeFreeDataFTP.ini"
+#alias JohnsonLane "java -cp /home/msoliman/workingJunk/befree/classes:$CLASSPATH com.truelink.app.tool.johnsonLane.JohnsonLaneDataFTP /home/msoliman/workingJunk/befree/classes/com/truelink/app/tool/johnsonLane/JohnsonLaneDataFTP.ini"
+
+#RPM SCRIPTS ALIASES
+alias getRpmList perl ~/devel/build/getRpmList.pl -sr ~/devel/java -or ~/devel/java/ -er ~/devel/java/3rdparty -ini build-ro.ini -log -out ~/workingJunk/getRpmList.out -mysqlPass build-ro
+alias checkRpmList perl ~/devel/build/checkRpmPkgStatus.pl -sr ~/devel/java -or ~/devel/java/ -er ~/devel/java/3rdparty -ini build-ro.ini -log -out ~/workingJunk/checkRpmPkgStatus.out -mysqlPass build-ro
+
+#ssh truelink
+alias tlssh "ssh -ltruelink"
+alias extdev "ssh vma00.slo-extdev"
+
+# db
+alias tns less /home/release/db/tnsnames.ora
+alias ora "ssh -l oracle `hostname`"
+
+# tmux
+alias tm tmux new -s `hostname -s`

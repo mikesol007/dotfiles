@@ -1,0 +1,5 @@
+[user]
+	name = Mike Soliman
+	email = msoliman@truelink.com
+[merge]
+	tool = vimdiff
