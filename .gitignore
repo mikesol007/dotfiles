@@ -1,6 +1,7 @@
 *.bak
 *.swp
 *.tmp
+*.cron
 CVS
 RCS
 app
