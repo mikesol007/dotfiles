@@ -1,5 +1,4 @@
 # Navigation
-alias ora 'ssh -l oracle `hostname`'
 alias reportrpt 'cd /home/msoliman/devel/db/app/report_rpt/'
 alias sptfr 'cd /home/msoliman/devel/db/app/report_rpt/init/objects'
 alias rptcncr 'cd /home/msoliman/devel/db/app/rptcncr/'
@@ -25,4 +24,10 @@ alias prodcvs cvs -d :pserver:msoliman@prod-tools.cvs:/usr/local/cvs/prod-tools
 # db
 alias tns less /home/release/db/tnsnames.ora
 alias ora "ssh -l oracle `hostname`"
-
+alias db00 "ssh db00"
+alias db01 "ssh db01"
+alias db02 "ssh db02"
+alias db03 "ssh db03"
+alias db04 "ssh db04"
+alias devdb "ssh db000.slo-devdb.truelink.com"
+alias rpt01 "ssh rpt01"
