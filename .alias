@@ -6,7 +6,7 @@ alias ssh 'ssh -P'
 if -x /usr/bin/vim alias vi "vim"
 alias du du --max-depth=1 -h
 alias df df -h
-alias ls 'ls --color -sF'
+alias ls 'ls -GsF'
 alias ll 'ls -l'
 alias llh 'ls -clth | head'
 alias bail 'logout'
