@@ -39,3 +39,9 @@ www
 .viminfo*
 apache-ant*
 .Xauthority
+.irssi
+.m2
+bin/apache-maven-3.2.2
+head
+oradiag_msoliman
+*.gz
