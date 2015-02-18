@@ -1,5 +1,5 @@
 # .tcshrc
-umask 022
+umask 027
 
 setenv LS_COLORS di=36
 setenv MAIL ~/Maildir/
