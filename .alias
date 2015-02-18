@@ -2,10 +2,10 @@
 #SHELL ALIASES
 alias ssh 'ssh -P'
 #alias ls ls --color=tty
-#alias ll ls -lah --color=tty
+#alias ll ls -lh --color=tty
 if -x /usr/bin/vim alias vi "vim"
 alias du du --max-depth=1 -h
-alias df df -h
+alias df df -hP
 alias ls 'ls -GsF'
 alias ll 'ls -l'
 alias llh 'ls -clth | head'
