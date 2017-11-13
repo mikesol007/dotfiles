@@ -45,3 +45,34 @@ bin/apache-maven-3.2.2
 head
 oradiag_msoliman
 *.gz
+.amu
+.android
+.blurb
+3D\ Objects
+AppData
+Contacts
+Creative\ Cloud\ Files
+Desktop
+Documents
+Downloads
+Favorites
+Lightroom\ Settings
+Links
+Logitech
+Music
+NTUSER.DAT
+NTUSER.DAT{c694eca4-3784-11e7-9cc0-a94d7dd70582}.TM.blf
+NTUSER.DAT{c694eca4-3784-11e7-9cc0-a94d7dd70582}.TMContainer00000000000000000001.regtrans-ms
+NTUSER.DAT{c694eca4-3784-11e7-9cc0-a94d7dd70582}.TMContainer00000000000000000002.regtrans-ms
+OneDrive
+Pictures
+Saved\ Games
+Searches
+Sti_Trace.log
+Tracing
+Valley
+Videos
+ntuser*
+.IdeaIC11
+.MakeMKV
+_viminfo
